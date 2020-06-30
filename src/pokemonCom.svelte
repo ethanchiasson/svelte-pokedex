@@ -2,7 +2,7 @@
   import SearchBar from "../src/searchCom.svelte";
 
   let word = "ditto";
-  let numPoke = 50;
+  let numPoke = 151;
   const pokemonTest = [];
   let list = [];
   let searchQuery;
@@ -41,31 +41,101 @@
     min-width: 200px;
   }
 
-  main {
-    /* background-color: cadetblue; */
-  }
-
   #abil {
     border-radius: 0.5em;
-    background-color: rgb(8, 63, 107);
+    background-color: white;
+  }
+
+  .grass,
+  .fire,
+  .bug,
+  .poison,
+  .flying,
+  .electric,
+  .water,
+  .ground,
+  .normal,
+  .fairy,
+  .fighting,
+  .rock,
+  .steel,
+  .psychic,
+  .ghost,
+  .ice,
+  .dragon {
+    border-radius: 0.25em;
+    color: black;
+    font-weight: bold;
+    padding: 0.25em;
+    margin: 0.2em;
+  }
+  .grass {
+    background: greenyellow;
+  }
+  .fire {
+    background: red;
+  }
+  .bug {
+    background: lightcoral;
+  }
+  .poison {
+    background: violet;
+  }
+  .water {
+    background-color: lightskyblue;
+  }
+  .electric {
+    background: yellow;
+  }
+  .flying {
+    background: #c4c4c4;
+  }
+  .electric {
+    background: yellow;
+  }
+
+  .ground {
+    background-color: chocolate;
+  }
+
+  .normal {
+    background-color: dimgrey;
+  }
+
+  .fairy {
+    background-color: palevioletred;
+  }
+
+  .fighting {
+    background-color: orangered;
+  }
+
+  .rock {
+    background-color: silver;
+  }
+
+  .ghost {
+    background-color: whitesmoke;
+  }
+
+  .psychic {
+    background-color: darkorchid;
+  }
+
+  .steel {
+    background-color: slategrey;
+  }
+
+  .ice {
+    background-color: aquamarine;
+  }
+
+  .dragon {
+    background-color: crimson;
   }
 </style>
 
 <main>
-  <!-- <div>
-    {#each pokemonTest as p}
-      <p>{p.name}</p>
-      <p>{p.base_experience}exp</p>
-      <p>{p.weight}kg</p>
-      <p>{p.height}m</p>
-      {#each p.types as types}
-        <p>{types.type.name}</p>
-      {/each}
-      {#each p.abilities as ab}
-        <p>{ab.ability.name}</p>
-      {/each}
-    {/each}
-  </div> -->
   <div class="container text-white">
     <div class="d-flex flex-wrap justify-content-center">
       <div class="input-group mb-3">
@@ -98,21 +168,15 @@
           <div class="text-center">
             <div class="">
               {#each poke.types as types}
-                <span class="badge badge-secondary m-1 p-2">
+                <span
+                  class={types.type.name}
+                  style="background-color={types.type.name}">
                   {types.type.name}
                 </span>
               {/each}
             </div>
           </div>
           <!-- End Type -->
-          <!-- Height / Weight -->
-          <!-- <div class="text-center mt-2">
-            <div class="">
-              <p>Weight: {poke.weight}kg</p>
-              <p>Height: {poke.height}m</p>
-            </div>
-          </div> -->
-          <!-- End Height / Weight -->
           <!-- Abilities -->
           <div class="mt-4">
             <div class="">
@@ -125,7 +189,7 @@
                 <div class="">
                   {#each poke.abilities as abil}
                     <div class="">
-                      <div class=" m-2 text-white" id="abil">
+                      <div class=" m-2 bg-dark text-white" id="abil">
                         {abil.ability.name}
                       </div>
                     </div>
