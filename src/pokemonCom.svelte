@@ -2,7 +2,7 @@
   import SearchBar from "../src/searchCom.svelte";
 
   let word = "ditto";
-  let numPoke = 151;
+  let numPoke = 251;
   const pokemonTest = [];
   let list = [];
   let searchQuery;
@@ -36,9 +36,23 @@
 
 <style>
   .container > div > div {
-    background-color: #212121;
     border-radius: 0.4em;
     min-width: 200px;
+  }
+  .container > div > div:hover {
+    box-shadow: 3px 3px 12px #474747;
+    cursor: pointer;
+  }
+
+  #input {
+    box-shadow: 3px 3px 12px #474747;
+    cursor: pointer;
+  }
+
+  input:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
   }
 
   #abil {
@@ -62,30 +76,36 @@
   .psychic,
   .ghost,
   .ice,
-  .dragon {
+  .dragon,
+  .dark {
     border-radius: 0.25em;
     color: black;
     font-weight: bold;
     padding: 0.25em;
     margin: 0.2em;
   }
+
+  .dark {
+    background-color: #212121;
+    color: white;
+  }
   .grass {
-    background: greenyellow;
+    background: #2cdab1;
   }
   .fire {
-    background: red;
+    background: #f7786b;
   }
   .bug {
-    background: lightcoral;
+    background: greenyellow;
   }
   .poison {
     background: violet;
   }
   .water {
-    background-color: lightskyblue;
+    background-color: #58abf6;
   }
   .electric {
-    background: yellow;
+    background: #ffce4b;
   }
   .flying {
     background: #c4c4c4;
@@ -95,15 +115,15 @@
   }
 
   .ground {
-    background-color: chocolate;
+    background-color: #c47e76;
   }
 
   .normal {
-    background-color: dimgrey;
+    background-color: grey;
   }
 
   .fairy {
-    background-color: palevioletred;
+    background-color: pink;
   }
 
   .fighting {
@@ -111,7 +131,7 @@
   }
 
   .rock {
-    background-color: silver;
+    background-color: #888888;
   }
 
   .ghost {
@@ -119,7 +139,7 @@
   }
 
   .psychic {
-    background-color: darkorchid;
+    background-color: #9f5bba;
   }
 
   .steel {
@@ -127,7 +147,7 @@
   }
 
   .ice {
-    background-color: aquamarine;
+    background-color: #cfd9ff;
   }
 
   .dragon {
@@ -136,9 +156,9 @@
 </style>
 
 <main>
-  <div class="container text-white">
+  <div class="container text-dark">
     <div class="d-flex flex-wrap justify-content-center">
-      <div class="input-group mb-3">
+      <div class="input-group mb-3" id="input">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">
             <img src="pokeball.png" alt="" width="20" />
@@ -153,7 +173,7 @@
           bind:value={searchQuery} />
       </div>
       {#each list as poke}
-        <div class="m-1">
+        <div class={JSON.stringify(poke.types[0].type.name).replace(/\"/g, '')}>
           <!-- Name -->
           <div class="text-center font-weight-bold">
             <div class="text-capitalize">{poke.name}</div>
@@ -166,11 +186,9 @@
           </div>
           <!-- Type -->
           <div class="text-center">
-            <div class="">
+            <div class="text-light">
               {#each poke.types as types}
-                <span
-                  class={types.type.name}
-                  style="background-color={types.type.name}">
+                <span class={types.type.name} style="filter: brightness(85%)">
                   {types.type.name}
                 </span>
               {/each}

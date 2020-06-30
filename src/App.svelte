@@ -1,5 +1,4 @@
 <script>
-  export let name;
   import SearchBar from "../src/searchCom.svelte";
   import Pokemon from "../src/pokemonCom.svelte";
 </script>
@@ -13,12 +12,11 @@
   }
 
   h1 {
-    /* color: #ff000d; */
     color: white;
     text-transform: uppercase;
     font-size: 4em;
     font-weight: bold;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 3px black;
   }
 
   @media (min-width: 640px) {
