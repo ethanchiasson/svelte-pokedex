@@ -199,7 +199,6 @@
             </div>
           </div>
           <!-- End Abilities -->
-          <button class="btn-sm btn-primary m-2">View</button>
         </div>
       {/each}
     </div>
