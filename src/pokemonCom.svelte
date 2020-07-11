@@ -1,12 +1,31 @@
 <script>
   import SearchBar from "../src/searchCom.svelte";
   import PokeCard from "../src/pokeCard.svelte";
+  import { onMount } from "svelte";
 
-  let word = "ditto";
-  let numPoke = 251;
+  let numPoke = 151;
   const pokemonTest = [];
   let list = [];
   let searchQuery;
+
+  // let pokemon = [];
+
+  // onMount(async () => {
+  //   const res = await fetch("./db.json");
+  //   pokemon = await res.json();
+  //   console.log(pokemon);
+  // });
+
+  // function fetchItemIDs() {
+  //   fetch("./db.json")
+  //     .then(function(resp) {
+  //       return resp.json();
+  //     })
+  //     .then(function(pokes) {
+  //       console.log(pokes);
+  //       const pokemon = pokes;
+  //     });
+  // }
 
   const getPokemon = async id => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;

@@ -242,8 +242,8 @@
 
 <main>
   <div
-    class={JSON.stringify(poke.types[0].type.name).replace(/\"/g, '')}
-    transition:fly={{ x: -300, duration: 750 }}>
+    transition:fly={{ x: -300, duration: 1000 }}
+    class={JSON.stringify(poke.types[0].type.name).replace(/\"/g, '')}>
     <!-- Name -->
     <div class="text-center font-weight-bold">
       <div class="text-capitalize">{poke.name}</div>
