@@ -7,7 +7,7 @@
   main > div {
     border-radius: 0.4em;
     min-width: 200px;
-    min-height: 350px;
+    /* min-height: 350px; */
     -webkit-transition: -webkit-transform 0.8s ease-in-out;
     transition: transform 0.8s ease-in-out;
   }
@@ -16,6 +16,7 @@
     box-shadow: 3px 3px 12px #474747;
     cursor: pointer;
     position: relative;
+    bottom: 1em;
     bottom: 1em;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
@@ -66,7 +67,7 @@
 
   .dark {
     color: white;
-    background-image: -webkit-linear-gradient(-30deg, #121212 50%, #212121 50%);
+    background-image: -webkit-linear-gradient(30deg, #121212 50%, #212121 50%);
   }
 
   .dark2 {
@@ -74,14 +75,14 @@
     color: white;
   }
   .grass {
-    background-image: -webkit-linear-gradient(-30deg, #28ad8e 50%, #2cdab1 50%);
+    background-image: -webkit-linear-gradient(30deg, #28ad8e 50%, #2cdab1 50%);
   }
   .grass2 {
     background-color: #2cdab1;
   }
 
   .fire {
-    background-image: -webkit-linear-gradient(-30deg, #dd6153 50%, #f7786b 50%);
+    background-image: -webkit-linear-gradient(30deg, #dd6153 50%, #f7786b 50%);
   }
 
   .fire2 {
@@ -91,7 +92,7 @@
   .bug {
     background: greenyellow;
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       rgb(147, 221, 37) 50%,
       greenyellow 50%
     );
@@ -103,7 +104,7 @@
 
   .poison {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       violet 50%,
       rgb(182, 88, 182) 50%
     );
@@ -113,7 +114,7 @@
     background: violet;
   }
   .water {
-    background-image: -webkit-linear-gradient(-30deg, #3e91da 50%, #58abf6 50%);
+    background-image: -webkit-linear-gradient(30deg, #3e91da 50%, #58abf6 50%);
   }
 
   .water2 {
@@ -122,18 +123,18 @@
 
   .electric {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       #ffce4b 50%,
       rgb(241, 241, 69) 50%
     );
   }
 
   .electric2 {
-    background: #ffce4b;
+    background: rgb(241, 241, 69);
   }
 
   .flying {
-    background-image: -webkit-linear-gradient(-30deg, #c9c9c9 50%, #c4c4c4 50%);
+    background-image: -webkit-linear-gradient(30deg, #c9c9c9 50%, #c4c4c4 50%);
   }
 
   .flying2 {
@@ -141,7 +142,7 @@
   }
 
   .ground {
-    background-image: -webkit-linear-gradient(-30deg, #af6b63 50%, #c47e76 50%);
+    background-image: -webkit-linear-gradient(30deg, #af6b63 50%, #c47e76 50%);
   }
 
   .ground2 {
@@ -149,7 +150,7 @@
   }
 
   .normal {
-    background-image: -webkit-linear-gradient(-30deg, dimgrey 50%, grey 50%);
+    background-image: -webkit-linear-gradient(30deg, dimgrey 50%, grey 50%);
   }
   .normal2 {
     background-color: grey;
@@ -157,7 +158,7 @@
 
   .fairy {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       palevioletred 50%,
       pink 50%
     );
@@ -169,7 +170,7 @@
 
   .fighting {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       rgb(216, 58, 0) 50%,
       orangered 50%
     );
@@ -180,7 +181,7 @@
   }
 
   .rock {
-    background-image: -webkit-linear-gradient(-30deg, #757575 50%, #888888 50%);
+    background-image: -webkit-linear-gradient(30deg, #757575 50%, #888888 50%);
   }
 
   .rock2 {
@@ -189,7 +190,7 @@
 
   .ghost {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       rgb(233, 233, 233) 50%,
       whitesmoke 50%
     );
@@ -200,7 +201,7 @@
   }
 
   .psychic {
-    background-image: -webkit-linear-gradient(-30deg, #843fa0 50%, #9f5bba 50%);
+    background-image: -webkit-linear-gradient(30deg, #843fa0 50%, #9f5bba 50%);
   }
 
   .psychic2 {
@@ -208,7 +209,7 @@
   }
 
   .steel {
-    background-image: -webkit-linear-gradient(-30deg, gray 50%, slategray 50%);
+    background-image: -webkit-linear-gradient(30deg, gray 50%, slategray 50%);
   }
 
   .steel2 {
@@ -216,7 +217,7 @@
   }
 
   .ice {
-    background-image: -webkit-linear-gradient(-30deg, #bbc7f5 50%, #cfd9ff 50%);
+    background-image: -webkit-linear-gradient(30deg, #bbc7f5 50%, #cfd9ff 50%);
   }
   .ice2 {
     background-color: #cfd9ff;
@@ -224,7 +225,7 @@
 
   .dragon {
     background-image: -webkit-linear-gradient(
-      -30deg,
+      30deg,
       rgb(179, 9, 43) 50%,
       crimson 50%
     );
@@ -238,26 +239,44 @@
     border-radius: 0.5em;
     background-color: white;
   }
+
+  #poke_id {
+    border-radius: 1em;
+    padding: 0.2em;
+    max-width: 3em;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
 </style>
 
 <main>
+
   <div
+    data-toggle="modal"
+    data-target="#exampleModal"
     transition:fly={{ x: -300, duration: 1000 }}
     class={JSON.stringify(poke.types[0].type.name).replace(/\"/g, '')}>
-    <!-- Name -->
-    <div class="text-center font-weight-bold">
-      <div class="text-capitalize">{poke.name}</div>
-      <p>#{poke.id}</p>
-    </div>
-    <!-- End Name -->
     <div class="">
       <div>
-        <img src={poke.sprites.front_default} alt="" />
+        <img src={poke.sprites.front_default} class="mt-2" alt="" />
       </div>
     </div>
+    <!-- Name -->
+    <div class="text-center font-weight-bold">
+      <div class="text-capitalize">
+        <h5>{poke.name}</h5>
+      </div>
+      <p id="poke_id" class="mt-1">#{poke.id}</p>
+    </div>
+    <!-- End Name -->
     <!-- Type -->
     <div class="text-center">
-      <div class="text-light">
+      <div class="text-light mt-5 mb-5">
         {#each poke.types as types}
           <span class={types.type.name + '2'} style="filter: brightness(110%);">
             {types.type.name}
@@ -267,13 +286,11 @@
     </div>
     <!-- End Type -->
     <!-- Abilities -->
-    <div class="mt-4">
+    <!-- <div class="mt-4">
       <div class="">
-        <!-- title -->
         <div class="">
           <div class="font-weight-bold">Abilities</div>
         </div>
-        <!-- End title-->
         <div class="">
           <div class="">
             {#each poke.abilities as abil}
@@ -286,7 +303,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- End Abilities -->
   </div>
 </main>

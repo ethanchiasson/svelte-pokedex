@@ -1,12 +1,14 @@
 <script>
   import SearchBar from "../src/searchCom.svelte";
   import PokeCard from "../src/pokeCard.svelte";
+  import Modal from "../src/modal.svelte";
   import { onMount } from "svelte";
 
   let numPoke = 151;
   const pokemonTest = [];
   let list = [];
   let searchQuery;
+  let selectedPokemon = {};
 
   // let pokemon = [];
 
@@ -94,8 +96,9 @@
           bind:value={searchQuery} />
       </div>
       {#each list as poke}
-        <PokeCard {poke} />
+        <PokeCard {poke} on:click={() => (selectedPokemon = poke)} />
       {/each}
+      <Modal poke={selectedPokemon} />
     </div>
   </div>
 </main>
